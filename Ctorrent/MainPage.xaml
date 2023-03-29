@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="Ctorrent.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Ctorrent"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+        <muxc:MenuBar>
+            <muxc:MenuBarItem Title="File">
+                <MenuFlyoutItem Text="Open..." Click="OpenFile_Click"/>
+                <MenuFlyoutItem Text="Open from URL"/>
+                <MenuFlyoutSeparator />
+                <MenuFlyoutItem Text="Exit"/>
+            </muxc:MenuBarItem>
+
+            <muxc:MenuBarItem Title="Options">
+                <MenuFlyoutItem Text="Download location..." Click="ChooseDownloadLocation_Click"/>
+                <MenuFlyoutSeparator/>
+                <muxc:RadioMenuFlyoutItem Text="Landscape" GroupName="OrientationGroup"/>
+                <muxc:RadioMenuFlyoutItem Text="Portrait" GroupName="OrientationGroup" IsChecked="True"/>
+                <MenuFlyoutSeparator/>
+                <muxc:RadioMenuFlyoutItem Text="Small icons" GroupName="SizeGroup"/>
+                <muxc:RadioMenuFlyoutItem Text="Medium icons" IsChecked="True" GroupName="SizeGroup"/>
+                <muxc:RadioMenuFlyoutItem Text="Large icons" GroupName="SizeGroup"/>
+            </muxc:MenuBarItem>
+
+            <muxc:MenuBarItem Title="Help">
+                <MenuFlyoutItem Text="About"/>
+            </muxc:MenuBarItem>
+        </muxc:MenuBar>
+        <ListView x:Name="Downloads" Grid.Row="1">
+            
+        </ListView>
+    </Grid>
+</Page>
